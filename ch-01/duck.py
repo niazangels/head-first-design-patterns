@@ -92,8 +92,6 @@ class MallardDuck(Duck):
 
     def __init__(self):
         super().__init__()
-
-    def __init__(self):
         self.fly_behavior = FlyWithWings()
         self.quack_behavior = Quack()
 
