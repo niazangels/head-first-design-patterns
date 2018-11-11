@@ -124,15 +124,19 @@ def create_drink(drink, order):
 if __name__ == "__main__":
 
     drink = None
+    # Get all subclasses of BaseClass - These are the drinks
     drinks = {
         cls.__name__: cls
         for cls in BaseClass.__subclasses__()
         if cls.__name__ != "AddOns"
     }
+    # Get all subclasses of AddOns - These are our concrete add ons
     addons = {cls.__name__: cls for cls in AddOns.__subclasses__()}
 
+    # Say hello
     display_welcome()
 
+    # Go get that order!
     while True:
         order = input("> ")
         drink = create_drink(drink, order)
