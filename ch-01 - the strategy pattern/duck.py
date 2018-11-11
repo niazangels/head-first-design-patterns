@@ -29,6 +29,7 @@ class FlyRocketPowered(FlyBehavior):
     def fly(self):
         print("Flying with a 🚀")
 
+
 # Quack Behaviors
 
 
@@ -46,7 +47,6 @@ class Quack(QuackBehavior):
 
 
 class Squeak(QuackBehavior):
-
     def __init__(self):
         super().__init__()
 
@@ -64,8 +64,8 @@ class MuteQuack(QuackBehavior):
 
 # Duck
 
-class Duck(object):
 
+class Duck(object):
     def __init__(self):
         self.fly_behavior = FlyBehavior()
         self.quack_behavior = QuackBehavior()
@@ -88,8 +88,8 @@ class Duck(object):
 
 # Mallard Duck
 
-class MallardDuck(Duck):
 
+class MallardDuck(Duck):
     def __init__(self):
         super().__init__()
         self.fly_behavior = FlyWithWings()
@@ -100,7 +100,6 @@ class MallardDuck(Duck):
 
 
 class ModelDuck(Duck):
-
     def __init__(self):
         super().__init__()
         self.fly_behavior = FlyNoWay()
@@ -110,14 +109,14 @@ class ModelDuck(Duck):
         print("I'm a ModelDuck")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 
     my_duck = MallardDuck()
     my_duck.display()
     my_duck.perform_quack()
     my_duck.perform_fly()
 
-    print('\n')
+    print("\n")
 
     your_duck = ModelDuck()
     your_duck.display()

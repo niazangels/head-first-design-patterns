@@ -9,23 +9,23 @@ class Publisher(object):
         self.subscribers.discard(subscriber)
 
     def dispatch(self, payload):
-        for subsciber in self.subscribers:
-            subsciber.update(payload)
+        for subscriber in self.subscribers:
+            subscriber.update(payload)
 
 
-class Subsciber(object):
+class Subscriber(object):
     def __init__(self, name):
         self.name = name
 
     def update(self, payload):
-        print(f'{self.name} received {str(payload)}')
+        print(f"{self.name} received {str(payload)}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 
-    dhanush = Subsciber('Dhanush')
-    vijay_sethupathi = Subsciber('Vijay Sethupathi')
-    simbu = Subsciber('Simbu')
+    dhanush = Subscriber("Dhanush")
+    vijay_sethupathi = Subscriber("Vijay Sethupathi")
+    simbu = Subscriber("Simbu")
 
     box_office = Publisher()
 
@@ -33,7 +33,7 @@ if __name__ == '__main__':
     box_office.add_subscriber(vijay_sethupathi)
     box_office.add_subscriber(simbu)
 
-    box_office.dispatch('New offer from Gautham Vasudev Menon')
+    box_office.dispatch("New offer from Gautham Vasudev Menon")
 
     box_office.remove_subscriber(simbu)
-    box_office.dispatch('Another offer from Gautham Vasudev Menon')
+    box_office.dispatch("Another offer from Gautham Vasudev Menon")
